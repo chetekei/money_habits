@@ -1,4 +1,4 @@
-streamlit_shadcn_ui as ui
+streamlit_shadcn_ui
 plotly
 st_aggrid
 gspread
