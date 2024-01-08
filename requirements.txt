@@ -1,3 +1,5 @@
-streamlit_shadcn_ui as ui
-plotly_express
-st_aggrid
+streamlit_shadcn_ui
+plotly
+gspread
+openpyxl
+pandas
