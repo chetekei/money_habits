@@ -1,6 +1,5 @@
 streamlit_shadcn_ui
 plotly
-st_aggrid
 gspread
 openpyxl
 pandas
