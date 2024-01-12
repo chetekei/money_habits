@@ -75,9 +75,9 @@ with card_container(key='global'):
         with card_container(key='dashboard'):
             cols = st.columns(3)
             with cols[0]:
-                ui.metric_card(title="Month To Date", content=f'Ksh. {amount}', description=["+20.1%", "from last month"], key="card1")
+                ui.metric_card(title="Month To Date", content=f'Ksh. {amount}', description=, key="card1")
             with cols[1]:
-                ui.metric_card(title="Week To Date", content=f'Ksh. {this_week_amount}', description="+20.1% from last month", key="card2")
+                ui.metric_card(title="Week To Date", content=f'Ksh. {this_week_amount}', description=, key="card2")
             with cols[2]:
                 ui.metric_card(title="Frequent Purchase", content = f'{frequent_use}', description= f"{count_store} times", key="card3")
 
