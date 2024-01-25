@@ -129,7 +129,7 @@ with card_container(key='global'):
             
             Date = json.dumps(st.date_input("Date"), default=str)
             Use = st.text_input("Product")
-            Category = st.selectbox("Category:", ["SAVINGS", "HOUSE", "FOOD", "FAMILY", "TRANSPORT", "EDUCATION", "ENTERTAINMENT", "WARDROBE"])        
+            Category = st.selectbox("Category:", ["SAVINGS", "HOUSE", "FOOD", "FAMILY", "TRANSPORT", "EDUCATION", "ENTERTAINMENT", "WARDROBE", "GYM"])        
             Store = st.text_input("Store")
             Amount = st.text_input("Amount")
 
