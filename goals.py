@@ -96,7 +96,7 @@ with card_container(key='global'):
             fig.update_layout(title={'text': 'CONSOLIDATED 2024 EXPENSES BY CATEGORY', 'x': 0.5, 'xanchor': 'center'},  width=475,
                                     xaxis_title='Category',
                                     yaxis_title='Amount',
-                                    xaxis=dict(tickfont=dict(size=8)),                                  
+                                    xaxis=dict(tickfont=dict(size=7)),                                  
                                     )
             
 
