@@ -93,7 +93,7 @@ with card_container(key='global'):
             y=category_sum_amounts        
             )])
             
-            fig.update_layout(title={'text': 'CONSOLIDATED 2024 EXPENSES BY CATEGORY', 'x': 0.5, 'xanchor': 'center'},  width=475,
+            fig.update_layout(title={'text': 'CONSOLIDATED 2024 EXPENSES BY CATEGORY', 'x': 0.5, 'xanchor': 'center'},  width=500,
                                     xaxis_title='Category',
                                     yaxis_title='Amount',
                                     xaxis=dict(tickfont=dict(size=7)),                                  
@@ -108,7 +108,7 @@ with card_container(key='global'):
             y=day_amounts        
             )])
             
-            fig2.update_layout(title={'text': 'EXPENDITURE BY DAY OF WEEK', 'x': 0.5, 'xanchor': 'center'}, width=450,
+            fig2.update_layout(title={'text': 'EXPENDITURE BY DAY OF WEEK', 'x': 0.5, 'xanchor': 'center'}, width=400,
                                 xaxis=dict(categoryorder='array', categoryarray=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], tickfont=dict(size=10)),
                                 xaxis_title='Day',
                                 yaxis_title='Amount'                              
