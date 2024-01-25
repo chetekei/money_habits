@@ -93,7 +93,7 @@ with card_container(key='global'):
             y=category_sum_amounts        
             )])
             
-            fig.update_layout(title={'text': 'CONSOLIDATED 2024 EXPENSES BY CATEGORY', 'x': 0.4, 'xanchor': 'center'},  width=500,
+            fig.update_layout(title={'text': 'CONSOLIDATED 2024 EXPENSES BY CATEGORY', 'x': 0.4, 'xanchor': 'center'},  width=450,
                                     xaxis_title='Category',
                                     yaxis_title='Amount',
                                     xaxis=dict(tickfont=dict(size=7)),                                  
@@ -145,7 +145,7 @@ with card_container(key='global'):
     with tab3:
         
         st.table(newdf)
-        #ui.table(data = newdf)
+      
 
 
 
