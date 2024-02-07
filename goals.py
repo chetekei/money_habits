@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import gspread
 from datetime import datetime, timedelta
-import json
+import json  
 import re
 import streamlit_shadcn_ui as ui
 from google.oauth2 import service_account
@@ -23,16 +23,22 @@ url = "https://docs.google.com/spreadsheets/d/1c9ZVdhfrTDME7wjCgxkDeb7GRzgg43JCJ
     
 # Open the Google Sheets spreadsheet
 worksheet = gc.open_by_url(url).worksheet("finances")
+worksheet_budget = gc.open_by_url(url).worksheet("budget")
 
  # Read data from the Google Sheets worksheet
 data_frame = worksheet.get_all_values()
+budget = worksheet_budget.get_all_values()
     
 # Prepare data for Plotly
 headers = data_frame[0]
 data_frame = data_frame[1:]
+budget = budget[1:]
+
 df = pd.DataFrame(data_frame, columns=headers)
+df2 = pd.DataFrame(budget, columns=headers)
 
 df['Amount'] = df['Amount'].astype(int)
+d2f['Amount'] = df2['Amount'].astype(int)
 
 amount = df['Amount'].sum()
 
