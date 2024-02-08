@@ -103,15 +103,32 @@ with card_container(key='global'):
             tab4, tab5  = st.tabs(["Month Analysis", "Week Analysis"])
             with tab4:
                 # Calculate the sum of amounts for each category
-                category_sum_amounts = this_month.groupby('Category')['Amount'].sum()
+                bar_actual = this_month.groupby('Category')['Amount'].sum()
+                bar_budget = this_month2.groupby('Category')['Amount'].sum()
+
+                fig = go.Figure()
+
+                        fig.add_trace(go.Bar(
+                                width= 0.425,
+                                x= bar_actual['Month'],
+                                y= bar_actual['Amount'],   
+                                name = 'Actual',
+                                marker_color="#00A550"
+                                   
+                                ))               
+                        
+                        
+                        fig.add_trace(go.Bar(
+                                width= 0.425,
+                                x= bar_budget['Month'],
+                                y= bar_budget['Amount'], 
+                                name = 'Budget',                                
+                                marker_color="#FFA836"   
+                                ))
                 
-                # Create a bar chart for Category vs. Sum of Amounts using Plotly
-                fig = go.Figure(data=[go.Bar(
-                    x=category_sum_amounts.index,
-                    y=category_sum_amounts        
-                )])
                 
-                fig.update_layout(title={'text': 'CONSOLIDATED 2024 EXPENSES BY CATEGORY', 'x': 0.4, 'xanchor': 'center'},  width=800,
+                
+                fig.update_layout(title={'text': 'MONTHLY EXPENDITURE ANALYSIS', 'x': 0.4, 'xanchor': 'center'},  width=800,
                                         xaxis_title='Category',
                                         yaxis_title='Amount',
                                         xaxis=dict(tickfont=dict(size=7)),                                  
