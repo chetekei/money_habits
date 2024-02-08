@@ -50,7 +50,7 @@ df['Purchase Date'] = df['Date'].str.extract(date_pattern)
 
 
 df['Purchase Date'] = pd.to_datetime(df['Purchase Date'])
-df2['Date'] = pd.to_date(df2['Date'])
+df2['Date'] = pd.to_datetime(df2['Date'])
 
 df['Month'] = df['Purchase Date'].dt.month_name()
 df2['Month'] = df2['Date'].dt.month_name()
