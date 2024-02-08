@@ -41,8 +41,6 @@ df2 = pd.DataFrame(budget, columns=headers_2)
 df['Amount'] = df['Amount'].astype(int)
 df2['Amount'] = df2['Amount'].astype(int)
 
-amount = df['Amount'].sum()
-
 # Regular expression to capture date values in the format YYYY-MM-DD
 date_pattern = re.compile(r"\b(\d{4}-\d{2}-\d{2})\b")
 
@@ -67,6 +65,8 @@ current_month = timestamp.strftime('%B')
 
 this_month = df[df['Month'] == current_month]
 this_month2 = df2[df2['Month'] == current_month]
+
+amount = this_month['Amount'].sum()
 
 start_of_week = current_date - timedelta(days=current_date.weekday())
 end_of_week = start_of_week + timedelta(days=6)
