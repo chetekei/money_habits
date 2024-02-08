@@ -47,6 +47,7 @@ amount = df['Amount'].sum()
 date_pattern = re.compile(r"\b(\d{4}-\d{2}-\d{2})\b")
 
 df['Purchase Date'] = df['Date'].str.extract(date_pattern)
+df2['Date'] = df2['Date'].str.extract(date_pattern)
 
 
 df['Purchase Date'] = pd.to_datetime(df['Purchase Date'])
