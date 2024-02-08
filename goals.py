@@ -50,13 +50,21 @@ df['Purchase Date'] = df['Date'].str.extract(date_pattern)
 
 
 df['Purchase Date'] = pd.to_datetime(df['Purchase Date'])
+df2['Date'] = pd.to_date(df['Date'])
+
+df['Month'] = df['Purchase Date'].dt.month_name()
+df2['Month'] = df['Date'].dt.month_name()
 
 df['Day'] = df['Purchase Date'].dt.day_name()
-print(df)
+
 
 newdf = df[['Purchase Date', 'Use', 'Category', 'Store', 'Amount']]
 
 current_date = datetime.now()
+current_month = timestamp.strftime('%B')
+
+this_month = df[df['Month'] == current_month]
+this_month2 = df2[df2['Month'] == current_month]
 
 start_of_week = current_date - timedelta(days=current_date.weekday())
 end_of_week = start_of_week + timedelta(days=6)
@@ -93,7 +101,7 @@ with card_container(key='global'):
             tab4, tab5  = st.tabs(["Month Analysis", "Week Analysis"])
             with tab4:
                 # Calculate the sum of amounts for each category
-                category_sum_amounts = df.groupby('Category')['Amount'].sum()
+                category_sum_amounts = this_month.groupby('Category')['Amount'].sum()
                 
                 # Create a bar chart for Category vs. Sum of Amounts using Plotly
                 fig = go.Figure(data=[go.Bar(
