@@ -103,8 +103,8 @@ with card_container(key='global'):
             tab4, tab5  = st.tabs(["Month Analysis", "Week Analysis"])
             with tab4:
                 # Calculate the sum of amounts for each category
-                bar_actual = this_month.groupby('Category')['Amount'].sum()
-                bar_budget = this_month2.groupby('Category')['Amount'].sum()
+                bar_actual = this_month.groupby('Category')['Amount'].sum().reset_index()
+                bar_budget = this_month2.groupby('Category')['Amount'].sum().reset_index()
 
                 fig = go.Figure()
 
