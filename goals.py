@@ -62,6 +62,7 @@ df['Day'] = df['Purchase Date'].dt.day_name()
 newdf = df[['Purchase Date', 'Use', 'Category', 'Store', 'Amount']]
 
 current_date = datetime.now()
+timestamp = pd.Timestamp(current_date)
 current_month = timestamp.strftime('%B')
 
 this_month = df[df['Month'] == current_month]
