@@ -53,7 +53,7 @@ df['Purchase Date'] = pd.to_datetime(df['Purchase Date'])
 df2['Date'] = pd.to_date(df2['Date'])
 
 df['Month'] = df['Purchase Date'].dt.month_name()
-df2['Month'] = df['Date'].dt.month_name()
+df2['Month'] = df2['Date'].dt.month_name()
 
 df['Day'] = df['Purchase Date'].dt.day_name()
 
