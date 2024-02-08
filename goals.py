@@ -39,7 +39,7 @@ df = pd.DataFrame(data_frame, columns=headers)
 df2 = pd.DataFrame(budget, columns=headers_2)
 
 df['Amount'] = df['Amount'].astype(int)
-d2f['Amount'] = df2['Amount'].astype(int)
+df2['Amount'] = df2['Amount'].astype(int)
 
 amount = df['Amount'].sum()
 
