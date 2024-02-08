@@ -91,7 +91,10 @@ with card_container(key='global'):
 
         with card_container(key='graph'):
             tab1, tab2  = st.tabs(["Month Analysis", "Week Analysis"])
-            with tab1:          
+            with tab1:
+                # Calculate the sum of amounts for each category
+                category_sum_amounts = df.groupby('Category')['Amount'].sum()
+                
                 # Create a bar chart for Category vs. Sum of Amounts using Plotly
                 fig = go.Figure(data=[go.Bar(
                     x=category_sum_amounts.index,
