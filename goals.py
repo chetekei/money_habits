@@ -31,7 +31,7 @@ budget = worksheet_budget.get_all_values()
     
 # Prepare data for Plotly
 headers = data_frame[0]
-headers = bodget[0]
+headers = budget[0]
 data_frame = data_frame[1:]
 budget = budget[1:]
 
