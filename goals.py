@@ -110,7 +110,7 @@ with card_container(key='global'):
 
                 fig.add_trace(go.Bar(
                         width= 0.425,
-                        x= bar_actual['Month'],
+                        x= bar_actual['Category'],
                         y= bar_actual['Amount'],   
                         name = 'Actual',
                         marker_color="#00A550"
@@ -120,7 +120,7 @@ with card_container(key='global'):
                 
                 fig.add_trace(go.Bar(
                         width= 0.425,
-                        x= bar_budget['Month'],
+                        x= bar_budget['Category'],
                         y= bar_budget['Amount'], 
                         name = 'Budget',                                
                         marker_color="#FFA836"   
