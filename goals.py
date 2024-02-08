@@ -100,7 +100,7 @@ with card_container(key='global'):
 
 
         with card_container(key='graph'):
-            tab4, tab5  = st.tabs(["Month Analysis", "Week Analysis"])
+            tab4, tab5  = st.tabs(["Month Analysis", "This Week Analysis"])
             with tab4:
                 # Calculate the sum of amounts for each category
                 bar_actual = this_month.groupby('Category')['Amount'].sum().reset_index()
@@ -145,7 +145,7 @@ with card_container(key='global'):
                 y=day_amounts        
                 )])
                 
-                fig2.update_layout(title={'text': 'EXPENDITURE BY DAY OF WEEK', 'x': 0.5, 'xanchor': 'center'}, width=600,
+                fig2.update_layout(title={'text': 'THIS WEEK EXPENDITURE BY DAY OF WEEK', 'x': 0.5, 'xanchor': 'center'}, width=600,
                                     xaxis=dict(categoryorder='array', categoryarray=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], tickfont=dict(size=10)),
                                     xaxis_title='Day',
                                     yaxis_title='Amount'                              
