@@ -103,7 +103,7 @@ with card_container(key='global'):
                                         xaxis=dict(tickfont=dict(size=7)),                                  
                                         )
 
-                 st.plotly_chart(fig)
+                st.plotly_chart(fig)
             
             with tab2:
                 day_amounts = this_week.groupby('Day')['Amount'].sum()
