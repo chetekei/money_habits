@@ -31,12 +31,12 @@ budget = worksheet_budget.get_all_values()
     
 # Prepare data for Plotly
 headers = data_frame[0]
-headers = budget[0]
+headers_2 = budget[0]
 data_frame = data_frame[1:]
 budget = budget[1:]
 
 df = pd.DataFrame(data_frame, columns=headers)
-df2 = pd.DataFrame(budget, columns=headers)
+df2 = pd.DataFrame(budget, columns=headers_2)
 
 df['Amount'] = df['Amount'].astype(int)
 d2f['Amount'] = df2['Amount'].astype(int)
