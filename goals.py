@@ -89,42 +89,39 @@ with card_container(key='global'):
 
 
         with card_container(key='graph'):
-            cols2 = st.columns(2)
-            # Calculate the sum of amounts for each category
-            category_sum_amounts = df.groupby('Category')['Amount'].sum()
-        
-            # Create a bar chart for Category vs. Sum of Amounts using Plotly
-            fig = go.Figure(data=[go.Bar(
-            x=category_sum_amounts.index,
-            y=category_sum_amounts        
-            )])
-            
-            fig.update_layout(title={'text': 'CONSOLIDATED 2024 EXPENSES BY CATEGORY', 'x': 0.4, 'xanchor': 'center'},  width=450,
-                                    xaxis_title='Category',
-                                    yaxis_title='Amount',
-                                    xaxis=dict(tickfont=dict(size=7)),                                  
-                                    )
-            
+            tab1, tab2  = st.tabs(["Month Analysis", "Week Analysis"])
+            with tab1:          
+                # Create a bar chart for Category vs. Sum of Amounts using Plotly
+                fig = go.Figure(data=[go.Bar(
+                    x=category_sum_amounts.index,
+                    y=category_sum_amounts        
+                )])
+                
+                fig.update_layout(title={'text': 'CONSOLIDATED 2024 EXPENSES BY CATEGORY', 'x': 0.4, 'xanchor': 'center'},  width=450,
+                                        xaxis_title='Category',
+                                        yaxis_title='Amount',
+                                        xaxis=dict(tickfont=dict(size=7)),                                  
+                                        )
 
-            day_amounts = this_week.groupby('Day')['Amount'].sum()
-        
-            # Create a bar chart for Category vs. Sum of Amounts using Plotly
-            fig2 = go.Figure(data=[go.Bar(
-            x=day_amounts.index,
-            y=day_amounts        
-            )])
+                 st.plotly_chart(fig)
             
-            fig2.update_layout(title={'text': 'EXPENDITURE BY DAY OF WEEK', 'x': 0.5, 'xanchor': 'center'}, width=400,
-                                xaxis=dict(categoryorder='array', categoryarray=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], tickfont=dict(size=10)),
-                                xaxis_title='Day',
-                                yaxis_title='Amount'                              
-                            )
+            with tab2:
+                day_amounts = this_week.groupby('Day')['Amount'].sum()
             
-            
-            with cols2[0]: 
-                st.plotly_chart(fig)
-
-            with cols2[1]:
+                # Create a bar chart for Category vs. Sum of Amounts using Plotly
+                fig2 = go.Figure(data=[go.Bar(
+                x=day_amounts.index,
+                y=day_amounts        
+                )])
+                
+                fig2.update_layout(title={'text': 'EXPENDITURE BY DAY OF WEEK', 'x': 0.5, 'xanchor': 'center'}, width=400,
+                                    xaxis=dict(categoryorder='array', categoryarray=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], tickfont=dict(size=10)),
+                                    xaxis_title='Day',
+                                    yaxis_title='Amount'                              
+                                )
+                
+                
+                
                 st.plotly_chart(fig2)
 
 
