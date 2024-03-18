@@ -66,14 +66,14 @@ current_month = timestamp.strftime('%B')
 this_month = df[df['Month'] == current_month]
 this_month2 = df2[df2['Month'] == current_month]
 
-amount_month = this_month[this_month['Amount']>0].sum()
+amount_month = this_month[this_month['Amount']>0]['Amount'].sum()
 amount = "{:,.0f}".format(amount_month)
 
 start_of_week = current_date - timedelta(days=current_date.weekday())
 end_of_week = start_of_week + timedelta(days=6)
 this_week = df[((df['Purchase Date']).dt.date >= start_of_week.date()) & ((df['Purchase Date']).dt.date <= end_of_week.date())]
 
-week_amount = this_week[this_week['Amount']>0].sum()
+week_amount = this_week[this_week['Amount']>0]['Amount'].sum()
 this_week_amount = "{:,.0f}".format(week_amount)
 
 frequent_use = df['Use'].mode().values[0]
